@@ -43,4 +43,8 @@ puts "----------"
 @store6.employees.create(first_name: "Jennifer", last_name: "Hass", hourly_rate: 100)
 @store6.employees.create(first_name: "Anna", last_name: "Bach", hourly_rate: 80)
 
-puts Employees
+# p Employee.all
+
+Employee.all.each do |employees|
+  puts "#{employees.first_name}"
+end

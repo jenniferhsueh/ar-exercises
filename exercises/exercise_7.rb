@@ -9,12 +9,6 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
-test = Store.create!(
-  name: "Surrey", 
-  annual_revenue: 224000, 
-  mens_apparel: false,
-  womens_apparel: true)
-
 # Exercise 7: Validations for both models
 # 1. Add validations to two models to enforce the following business rules:
 #   * Employees must always have a first name present
@@ -32,3 +26,20 @@ test = Store.create!(
 # (annual_revenue, mens_apparel, and womens_apparel)
 # 4. Display the error messages provided back from ActiveRecord to the user 
 # (one on each line) after you attempt to save/create the record
+
+# TO TEST---------------------
+# test = Store.create!(
+#   name: "Surrey", 
+#   annual_revenue: 224000, 
+#   mens_apparel: false,
+#   womens_apparel: true)
+
+# puts "TESTINGGGGGG #{test.id}"
+
+puts "Enter a store name"
+userInput = gets.chomp
+puts userInput
+
+newStore = Store.create(
+  name: userInput)
+puts newStore.errors.messages
